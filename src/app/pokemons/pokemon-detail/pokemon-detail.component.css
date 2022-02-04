@@ -1,0 +1,33 @@
+img {
+	max-width: 50%;
+	height: auto;
+  margin-left: 25%;
+}
+
+.pokemon{
+  height: 50% !important;
+}
+
+mat-card{
+  height: 60% !important;
+}
+
+mat-grid-list{
+  height: 55% !important;
+}
+
+.stats{
+  height: 70px !important;
+}
+
+p {
+  max-width: 100%;
+  text-align: center;
+}
+
+.description{
+  height: 70px !important;
+  width: 450px !important;
+  margin-left: 33%;
+}
+

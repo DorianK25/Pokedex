@@ -15,7 +15,7 @@
     <mat-grid-tile colspan="2" rowspan="1">
       <mat-list>
         <mat-list-item class="stats">
-          <p>{{ pokemonDetail?.name }}</p><audio src="../assets/audio/{{ pokemonDetail?.id }}.mp3"></audio>
+          {{ pokemonDetail?.name }} <button mat-button ><mat-icon>play_circle_outline</mat-icon></button> <audio src="../assets/audio/{{ pokemonDetail?.id }}.mp3"></audio>
         </mat-list-item>
         <mat-list-item>
           <mat-chip-list class="stats">

@@ -8,6 +8,8 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { AppRoutingModule } from '../app-routing.module';
 import {MatChipsModule} from '@angular/material/chips';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatCardModule,
     MatGridListModule,
     MatChipsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports:[
     PokemonListComponent

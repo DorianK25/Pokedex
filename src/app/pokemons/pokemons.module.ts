@@ -9,13 +9,18 @@ import { AppRoutingModule } from '../app-routing.module';
 import {MatChipsModule} from '@angular/material/chips';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatIconModule } from '@angular/material/icon'
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
+import { PokedexComponent } from './pokedex/pokedex.component'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 
 
 @NgModule({
   declarations: [
     PokemonListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    PokedexComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +31,10 @@ import { MatButtonModule } from '@angular/material/button'
     MatChipsModule,
     InfiniteScrollModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports:[
     PokemonListComponent

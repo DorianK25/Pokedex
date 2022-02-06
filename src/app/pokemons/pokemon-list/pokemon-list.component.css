@@ -1,0 +1,8 @@
+mat-list{
+  height: 100vh;
+  overflow: auto;
+}
+
+.example-full-width {
+  width: 100%;
+}

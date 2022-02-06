@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="pokemonDetail">
   <mat-grid-list cols="6"  rowHeight="280px" colsHeight="200px">
     <mat-grid-tile colspan="1" rowspan="1">
     </mat-grid-tile>
@@ -15,7 +15,7 @@
     <mat-grid-tile colspan="2" rowspan="1">
       <mat-list>
         <mat-list-item class="stats">
-          {{ pokemonDetail?.name }} <button mat-button ><mat-icon>play_circle_outline</mat-icon></button> <audio src="../assets/audio/{{ pokemonDetail?.id }}.mp3"></audio>
+          {{ pokemonDetail?.name }} <button mat-button (click)="playSound()"><mat-icon>play_circle_outline</mat-icon></button><audio autoplay id="sound" src="../assets/audio/{{ pokemonDetail?.id }}.mp3"></audio>
         </mat-list-item>
         <mat-list-item>
           <mat-chip-list class="stats">
@@ -32,4 +32,4 @@
 
   </mat-grid-list>
 </mat-card>
-<button (click)="goBack()">Retour</button>
+<!-- <button (click)="goBack()">Retour</button> -->

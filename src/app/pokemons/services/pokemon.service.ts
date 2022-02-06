@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PokemonDetail } from '../models/pokemon-detail.model';
@@ -12,8 +12,12 @@ export class PokemonService {
 
   Url="http://app-ec21e68e-3e55-42d7-b1ae-3eef7507a353.cleverapps.io";
 
-  getAllPokemon(limit?:number):Observable<PagedData<Pokemon>>{
-    return limit === undefined ? this.http.get<PagedData<Pokemon>>(this.Url+"/pokemons") : this.http.get<PagedData<Pokemon>>(this.Url+"/pokemons?limit="+limit);
+  getAllPokemon(limit:number):Observable<PagedData<Pokemon>>{
+    return this.http.get<PagedData<Pokemon>>(this.Url+"/pokemons?limit="+limit);
+  }
+
+  searchPokemon(limit:number,terms:string):Observable<PagedData<Pokemon>>{
+    return this.http.get<PagedData<Pokemon>>(this.Url+"/pokemons?limit="+limit+"&search="+terms);
   }
 
   getPokemon(id:number):Observable<PokemonDetail>{

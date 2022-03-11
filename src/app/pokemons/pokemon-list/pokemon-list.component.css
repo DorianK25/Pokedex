@@ -1,8 +1,24 @@
-mat-list{
-  height: 100vh;
+mat-nav-list{
+  height: 80vh;
   overflow: auto;
 }
 
 .example-full-width {
   width: 100%;
 }
+
+.text {
+ margin-top: 15%;
+ float: right;
+}
+
+.item {
+  height: 85px !important;
+}
+
+img {
+  max-width: 80px;
+  max-height: 80px;
+  width: 80px;
+  height: 80px;
+ }

@@ -13,7 +13,7 @@ export class PokemonService {
   Url="http://app-ec21e68e-3e55-42d7-b1ae-3eef7507a353.cleverapps.io";
 
   getAllPokemon(limit:number):Observable<PagedData<Pokemon>>{
-    return this.http.get<PagedData<Pokemon>>(this.Url+"/pokemons?limit="+limit);
+    return this.http.get<PagedData<Pokemon>>(this.Url+"/pokemons?offset="+limit);
   }
 
   searchPokemon(limit:number,terms:string):Observable<PagedData<Pokemon>>{

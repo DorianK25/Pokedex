@@ -12,7 +12,7 @@ export class PokemonListComponent implements OnInit {
 
   listPokemon:Pokemon[]=[];
 
-  sum:number=151;
+  sum:number=0;
 
   constructor(public pokemonService:PokemonService) { }
 
@@ -29,8 +29,8 @@ export class PokemonListComponent implements OnInit {
 
   onScroll(){
     if( this.sum < 151){
-      this.pokemonService.getPokemon(this.sum+1).subscribe(res => {this.listPokemon[res.id-1]=res});
-      this.sum++;
+      this.sum+=10;
+      this.pokemonService.getAllPokemon(this.sum).subscribe(res => {this.listPokemon = this.listPokemon.concat(res.data);});
     }
   }
 

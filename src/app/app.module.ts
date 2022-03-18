@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonsModule } from './pokemons/pokemons.module';
+import { AuthentificationModule } from './authentification/authentification.module';
+import { TeamComponent } from './team/team/team.component';
+import { TeamModule } from './team/team.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,15 @@ import { PokemonsModule } from './pokemons/pokemons.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthentificationModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    PokemonsModule
+    PokemonsModule,
+    TeamModule
   ],
-  providers: [],
+  providers: [
+    TeamComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

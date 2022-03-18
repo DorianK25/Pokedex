@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PokedexComponent } from './pokedex/pokedex.component'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({

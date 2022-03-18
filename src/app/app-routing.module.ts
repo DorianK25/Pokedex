@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormAuthentComponent } from './authentification/form-authent/form-authent.component';
 import { PokedexComponent } from './pokemons/pokedex/pokedex.component';
-import { PokemonDetailComponent } from './pokemons/pokemon-detail/pokemon-detail.component';
+import { TeamComponent } from './team/team/team.component';
 
 const routes: Routes = [
   {path: 'pokemon', component: PokedexComponent },
-  { path: '', redirectTo: '/pokemon', pathMatch: 'full' },
-  { path: 'pokemon/:id', component: PokedexComponent }
+  { path: '', redirectTo: '/team', pathMatch: 'full' },
+  { path: 'pokemon/:id', component: PokedexComponent },
+  { path: 'team', component: TeamComponent,canActivate:[TeamComponent]},
+  { path: 'login', component: FormAuthentComponent }
+
 ];
 
 @NgModule({

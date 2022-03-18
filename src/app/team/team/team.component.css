@@ -1,0 +1,26 @@
+mat-nav-list{
+  height: 75vh;
+  overflow: auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+mat-list{
+  height: 55% !important;
+}
+
+
+.item {
+  height: 85px !important;
+}
+
+img {
+  max-width: 80px;
+  max-height: 80px;
+  width: 80px;
+  height: 80px;
+
+ }
+

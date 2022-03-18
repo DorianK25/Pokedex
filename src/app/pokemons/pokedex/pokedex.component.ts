@@ -11,12 +11,9 @@ export class PokedexComponent implements OnInit {
 
   constructor() { }
 
-  onScroll() {
-    console.log("cc")
-  }
-
   ngOnInit(): void {
 
   }
+
 
 }

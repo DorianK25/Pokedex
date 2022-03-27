@@ -6,6 +6,8 @@ import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from '../app-routing.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     AppRoutingModule,
     MatGridListModule,
     PokemonsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class TeamModule { }

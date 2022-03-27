@@ -40,6 +40,8 @@ export class FormAuthentComponent implements OnInit {
             return;
         }
         this.userService.login(this.checkoutForm.value.username, this.checkoutForm.value.password).subscribe(res=>{
+
+
           this.userService.setWithExpiry("token",res,res.expires_in);
           this.router.navigate(['/team']);
         });

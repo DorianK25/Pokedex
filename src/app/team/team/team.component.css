@@ -1,5 +1,5 @@
 mat-nav-list{
-  height: 75vh;
+  height: 65vh;
   overflow: auto;
 }
 
@@ -7,8 +7,26 @@ mat-nav-list{
   width: 100%;
 }
 
-mat-list{
-  height: 55% !important;
+
+mat-grid-list {
+  margin-top: 25px !important;
+}
+
+mat-grid-tile {
+margin-top: 5% !important;
+
+}
+
+
+.button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
 }
 
 

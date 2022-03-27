@@ -23,7 +23,6 @@ export class UserService {
       "refresh_token" : refresh_token
     }
     return this.http.post<RefreshToken>(this.Url+"/auth/refresh",body);
-
   }
 
   getWithExpiry(key:any) {
@@ -32,13 +31,21 @@ export class UserService {
     if (!itemStr) {
       return null
     }
-    const item = JSON.parse(itemStr)
+    const item = JSON.parse(itemStr);
+
     const now = new Date()
+
+// console.log(now.getTime());
+// console.log(item.expiry);
+
+
     // compare the expiry time of the item with the current time
     if (now.getTime() > item.expiry) {
+
+
       // If the item is expired, delete the item from storage
       // and return null
-      if (now.getTime() > item.expiry*24) {
+      if (now.getTime() > item.expiry_day) {
         localStorage.removeItem("token");
       }else{
         this.getAccessToken(item.value.refresh_token)?.subscribe(res=>{this.setWithExpiry("token",res,res.expires_in)})
@@ -49,12 +56,13 @@ export class UserService {
 
   setWithExpiry(key:string, value:any, ttl:number) {
     const now = new Date()
-
     // `item` is an object which contains the original value
     // as well as the time when it's supposed to expire
+
     const item = {
       value: value,
-      expiry: now.getTime() + ttl,
+      expiry: now.getTime() + 3600,
+      expiry_day: now.getTime() + 3600*24
     }
     localStorage.setItem(key, JSON.stringify(item))
   }

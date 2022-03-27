@@ -36,6 +36,12 @@ export class TeamComponent implements OnInit,CanActivate {
         return false;
     }
 
+    searchPokemon(terms:string){
+      if(terms === '')
+        this.pokemonService.getAllPokemon(this.sum).subscribe(res=>{this.listPokemon=res.data});
+      else
+        this.pokemonService.searchPokemon(10,terms).subscribe(res=> {this.listPokemon=res.data});
+    }
 
   ngOnInit(): void {
      this.teamService.getTeam().subscribe(res=>{this.pokemons=res});
@@ -79,8 +85,13 @@ export class TeamComponent implements OnInit,CanActivate {
         supp = elt;
       }
     });
-    this.teamService.updateTeam(ids).subscribe();
-    this.teamService.getTeam().subscribe(res=>{this.pokemons=res});
+    console.log(ids);
+
+    this.teamService.updateTeam(ids).subscribe(()=>{
+      this.teamService.getTeam().subscribe(res=>{this.pokemons=res;});
+    });
+
+
   }
 
 

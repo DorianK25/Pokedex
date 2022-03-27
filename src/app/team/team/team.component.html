@@ -8,12 +8,16 @@
               <img src="../assets/img/sprites/{{ pokemon.id }}.png" alt="..." />
             </div>
             <span class="text">{{ pokemon.id }}. {{ pokemon.name }} </span>
-            <button (click)="deleteFromTeam(pokemon.id)"> X </button>
+            <button class ="button" (click)="deleteFromTeam(pokemon.id)"> X </button>
         </mat-list-item>
       </mat-nav-list>
     </mat-grid-tile>
     <mat-grid-tile>
       <mat-list>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Recherche</mat-label>
+          <input matInput #searchBox type="text" (input)="searchPokemon(searchBox.value)">
+        </mat-form-field>
         <mat-nav-list [scrollWindow]="false" infinite-scroll (scrolled)="onScroll()" class="nav">
           <mat-list-item *ngFor="let pokemon of listPokemon"  routerLinkActive="router-link-active" class="item">
               <div mat-line class="item" (click)="addPokemonToTeam(pokemon.id)">

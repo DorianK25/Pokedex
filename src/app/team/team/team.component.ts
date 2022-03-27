@@ -24,9 +24,6 @@ export class TeamComponent implements OnInit,CanActivate {
   constructor(private router: Router,private userService: UserService, private teamService: TeamService,private pokemonService:PokemonService) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):boolean {
-
-      console.log(this.userService.ifIsLogged());
-
         if (this.userService.ifIsLogged()) {
             // logged in so return true
             return true;

@@ -61,9 +61,10 @@ export class UserService {
 
     const item = {
       value: value,
-      expiry: now.getTime() + 3600,
-      expiry_day: now.getTime() + 3600*24
+      expiry: now.getTime() +1000*3600,
+      expiry_day: now.getTime() + 3600*1000*24
     }
+
     localStorage.setItem(key, JSON.stringify(item))
   }
 
